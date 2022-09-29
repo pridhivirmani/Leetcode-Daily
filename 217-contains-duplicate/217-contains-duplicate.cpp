@@ -1,16 +1,27 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        map<int,int>mpp;
-        for(int i=0;i<nums.size() ; i++){
-            mpp[nums[i]]++;
-        }
+//         map<int,int>mpp;
+//         for(int i=0;i<nums.size() ; i++){
+//             mpp[nums[i]]++;
+//         }
         
-        for(auto it:mpp){
-            if(it.second>1){
-                return true;
-            }
+//         for(auto it:mpp){
+//             if(it.second>1){
+//                 return true;
+//             }
+//         }
+//         return false;
+        
+        set<int> s;
+        for(int i=0; i<nums.size(); i++){
+            s.insert(nums[i]);
         }
-        return false;
+        if(s.size()==nums.size()){
+            return false;
+        }
+        return true;
+        
+        
     }
 };
